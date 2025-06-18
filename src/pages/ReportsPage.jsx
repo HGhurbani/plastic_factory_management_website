@@ -25,11 +25,11 @@ const ReportsPage = () => {
       className="p-6 glassmorphism"
     >
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-lime-400 via-green-500 to-emerald-600 flex items-center">
+        <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 flex items-center">
           <BarChart3 className="mr-3 ml-3 h-10 w-10" />
           التقارير والإحصائيات
         </h1>
-        <Button onClick={handleNotImplemented} className="bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-600 hover:to-green-700 text-white">
+        <Button onClick={handleNotImplemented} className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white">
           تصدير تقرير
         </Button>
       </div>

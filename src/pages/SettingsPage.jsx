@@ -53,7 +53,7 @@ const SettingsPage = () => {
         >
           <div>
             <h1 className="text-3xl font-bold text-gray-900 flex items-center space-x-3 rtl:space-x-reverse">
-              <Settings className="w-8 h-8 text-purple-600" />
+              <Settings className="w-8 h-8 text-blue-600" />
               <span>{t('settings')}</span>
             </h1>
             <p className="text-gray-600 mt-1">
