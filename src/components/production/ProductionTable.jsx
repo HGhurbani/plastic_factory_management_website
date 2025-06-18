@@ -26,6 +26,21 @@ const ProductionTable = ({ orders, onViewOrder, onEditOrder, onDeleteOrder }) =>
     }
   };
 
+  const getStep = (status) => {
+    switch (status) {
+      case "moldInstalled":
+        return 1;
+      case "inProgress":
+        return 2;
+      case "qualityCheck":
+        return 3;
+      case "completed":
+        return 4;
+      default:
+        return 0;
+    }
+  };
+
   const getPriorityColor = (priority) => {
     switch (priority) {
       case 'high': return 'bg-red-100 text-red-800';
@@ -86,6 +101,7 @@ const ProductionTable = ({ orders, onViewOrder, onEditOrder, onDeleteOrder }) =>
                           ></div>
                         </div>
                         <span className="text-xs text-gray-500 mt-1">{Math.round(progress)}%</span>
+                        <ProgressTimeline steps={[t("newOrder"), t("moldInstall"), t("run"), t("qualityCheck"), t("warehouse")]} current={getStep(order.status)} className="my-1" />
                       </td>
                       <td className="p-3">
                         <span className={`status-badge ${getStatusColor(order.status)}`}>
