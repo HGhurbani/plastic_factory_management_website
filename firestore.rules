@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function hasPermission(section) {
+      let role = userRole();
+      return role == 'factoryManager' ||
+        (role == 'operationsManager' && section in ['production', 'inventory', 'quality', 'reports']) ||
+        (role == 'moldSupervisor' && section in ['production', 'quality']) ||
+        (role == 'shiftSupervisor' && section in ['production', 'quality']) ||
+        (role == 'machineOperator' && section in ['production']) ||
+        (role == 'qualityController' && section in ['quality', 'reports']) ||
+        (role == 'warehouseKeeper' && section in ['inventory']) ||
+        (role == 'maintenanceManager' && section in ['maintenance', 'reports']) ||
+        (role == 'salesRepresentative' && section in ['sales', 'reports']) ||
+        (role == 'accountant' && section in ['sales', 'reports', 'settings']);
+    }
+
+    match /users/{uid} {
+      allow read, write: if isSignedIn() && request.auth.uid == uid;
+    }
+
+    match /productionOrders/{id} {
+      allow read, write: if isSignedIn() && hasPermission('production');
+    }
+
+    match /molds/{id} {
+      allow read, write: if isSignedIn() && hasPermission('production');
+    }
+
+    match /faults/{id} {
+      allow read, write: if isSignedIn() && hasPermission('maintenance');
+    }
+
+    match /salesOrders/{id} {
+      allow read, write: if isSignedIn() && hasPermission('sales');
+    }
+
+    match /invoices/{id} {
+      allow read, write: if isSignedIn() && hasPermission('sales');
+    }
+
+    match /inventory/{id} {
+      allow read, write: if isSignedIn() && hasPermission('inventory');
+    }
+
+    match /qualityChecks/{id} {
+      allow read, write: if isSignedIn() && hasPermission('quality');
+    }
+  }
+}

@@ -64,6 +64,10 @@ const translations = {
     machineOperation: 'تشغيل الآلة',
     qualityCheck: 'فحص الجودة',
     warehouseDelivery: 'توريد المخزن',
+    newOrder: "طلب جديد",
+    moldInstall: "تركيب القالب",
+    run: "تشغيل",
+    warehouse: "المخزن",
     
     // Sales
     salesOrders: 'أوامر المبيعات',
@@ -173,8 +177,10 @@ const translations = {
     machineOperation: 'Machine Operation',
     qualityCheck: 'Quality Check',
     warehouseDelivery: 'Warehouse Delivery',
-    
-    // Sales
+    newOrder: "Order Created",
+    moldInstall: "Mold Install",
+    run: "Run",
+    warehouse: "Warehouse",
     salesOrders: 'Sales Orders',
     newSalesOrder: 'New Sales Order',
     customerName: 'Customer Name',
