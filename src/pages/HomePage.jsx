@@ -10,7 +10,7 @@ const HomePage = () => {
       transition={{ duration: 0.5 }}
       className="text-center p-10 glassmorphism"
     >
-      <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600">
+      <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300">
         مرحباً بك في نظام إدارة المصنع
       </h1>
       <p className="text-xl text-slate-300 mb-8">

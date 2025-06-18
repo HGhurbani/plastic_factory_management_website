@@ -19,7 +19,7 @@ function App() {
     <AuthProvider>
       <LanguageProvider>
         <Router>
-          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">
             <Routes>
               <Route path="/login" element={<LoginPage />} />
               <Route path="/" element={

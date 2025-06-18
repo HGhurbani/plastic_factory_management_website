@@ -31,7 +31,7 @@ const Dashboard = () => {
       value: '2,847',
       change: '+12.5%',
       icon: Factory,
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-blue-600 to-blue-500',
       bgColor: 'bg-blue-50'
     },
     {
@@ -39,24 +39,24 @@ const Dashboard = () => {
       value: '$45,230',
       change: '+8.2%',
       icon: DollarSign,
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
+      color: 'from-blue-600 to-blue-500',
+      bgColor: 'bg-blue-50'
     },
     {
       title: t('inventoryValue'),
       value: '$128,450',
       change: '-2.1%',
       icon: Package,
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50'
+      color: 'from-blue-600 to-blue-500',
+      bgColor: 'bg-blue-50'
     },
     {
       title: t('qualityScore'),
       value: '98.5%',
       change: '+1.3%',
       icon: Shield,
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50'
+      color: 'from-blue-600 to-blue-500',
+      bgColor: 'bg-blue-50'
     }
   ];
 
@@ -104,28 +104,28 @@ const Dashboard = () => {
       title: isRTL ? 'أمر إنتاج جديد' : 'New Production Order',
       description: isRTL ? 'إنشاء أمر إنتاج جديد' : 'Create a new production order',
       icon: Factory,
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-blue-600 to-blue-500',
       action: () => toast({ title: t('featureNotImplemented') })
     },
     {
       title: isRTL ? 'فحص جودة' : 'Quality Inspection',
       description: isRTL ? 'بدء فحص جودة جديد' : 'Start a new quality inspection',
       icon: Shield,
-      color: 'from-green-500 to-green-600',
+      color: 'from-blue-600 to-blue-500',
       action: () => toast({ title: t('featureNotImplemented') })
     },
     {
       title: isRTL ? 'تقرير المخزون' : 'Inventory Report',
       description: isRTL ? 'عرض تقرير المخزون' : 'View inventory report',
       icon: Package,
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-blue-600 to-blue-500',
       action: () => toast({ title: t('featureNotImplemented') })
     },
     {
       title: isRTL ? 'تحليل الأداء' : 'Performance Analytics',
       description: isRTL ? 'عرض تحليل الأداء' : 'View performance analytics',
       icon: BarChart3,
-      color: 'from-orange-500 to-orange-600',
+      color: 'from-blue-600 to-blue-500',
       action: () => toast({ title: t('featureNotImplemented') })
     }
   ];
@@ -137,7 +137,7 @@ const Dashboard = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white"
+          className="bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl p-6 text-white"
         >
           <div className="flex items-center justify-between">
             <div>

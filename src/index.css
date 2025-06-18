@@ -4,12 +4,12 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-800 text-slate-50 min-h-screen font-sans;
+  @apply bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-slate-50 min-h-screen font-sans;
   direction: rtl; /* Default to RTL for Arabic */
 }
 
 .dark body {
-  @apply bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50;
+  @apply bg-gradient-to-br from-blue-900 to-blue-800 text-slate-50;
 }
 
 /* Basic styles for a modern look */
@@ -34,8 +34,11 @@ h3 { @apply text-2xl md:text-3xl; }
 }
 
 /* Custom utility classes */
+.gradient-bg {
+  @apply bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800;
+}
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium py-2 px-4 rounded-md shadow hover:opacity-90 transition-colors;
+  @apply bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium py-2 px-4 rounded-md shadow hover:opacity-90 transition-colors;
 }
 
 .card-hover {
@@ -47,7 +50,7 @@ h3 { @apply text-2xl md:text-3xl; }
 }
 
 .sidebar-gradient {
-  @apply bg-gradient-to-b from-slate-900 to-slate-700 text-white;
+  @apply bg-gradient-to-b from-blue-900 to-blue-700 text-white;
 }
 
 .notification-dot {
